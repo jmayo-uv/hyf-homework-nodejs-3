@@ -10,8 +10,21 @@ app.get('/', function(req, res){
 app.get('/users', function(req, res){
 
     res.send(
-            users
+        users
     );
+})
+
+app.post('/users/:id', function(req, res){
+
+        res.send("Hello World!");
+})
+
+app.get('/users/:id', function(req, res){
+    newUser = {id: req.params.id};
+    
+    users.push(newUser)
+    res.send(users)
+
 })
 
 app.listen(3000, function(){
