@@ -9,6 +9,10 @@ app.get('/', function(req, res){
     res.send("Hello World!");
 })
 
+app.post('/user', function(req, res){
+    res.status(200).send(users.id)
+})
+
 app.get('/users', function(req, res){
     res.send(users)
 })
