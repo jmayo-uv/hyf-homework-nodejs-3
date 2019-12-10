@@ -17,10 +17,10 @@ app.post('/user/:id', function(req, res){
     //idUser = users.length;
     var newUser = {
         id: req.params.id,
-        name: req.body.name
+        //name: req.body.name
     }  
     users.push(newUser)
-    res.status(201).send(newUser)
+    res.status(200).send(newUser)
 })
 
 app.get('/user/:id', function(req, res){
