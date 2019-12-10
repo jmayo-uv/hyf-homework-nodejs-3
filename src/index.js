@@ -54,22 +54,6 @@ app.post('/user/:id', function(req, res){
 })
 
 //Create an endpoint to DELETE to /user/:id
-
-// app.delete('/user/:id', (req, res) => {
-
-//     if(users.length > 0){
-//         users = [];
-//         res.status(202).json({
-//             ok: true
-//         })
-//     } else {
-//         res.status(204).json({
-//             ok: true
-//         });
-//     }
-
-// })
-
 app.delete('/user/:id', function(req, res){
     const user = users.find(user => user.id == req.params.id)
     res.status(202)
@@ -79,13 +63,7 @@ app.delete('/user/:id', function(req, res){
                 OK: true
             })
     } else {
-
         users = []
-        
-
-        // const index = users.indexOf(user)
-        // users.splice(index,1)
-        // res.status(202)
         res.status(202)
            .json({
                 OK: true
