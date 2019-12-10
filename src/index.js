@@ -57,7 +57,7 @@ app.post('/user/:id', function(req, res){
 app.delete('/user/:id', function(req, res){
     const user = users.find(user => user.id == req.params.id)
     if(!user){
-        res.status(404)
+        res.status(204)
            .send('No se encontró el usuario indicado')
     } else {
         const index = users.indexOf(user)
