@@ -31,6 +31,21 @@ app.get('/users/:id', function(req, res){
     }
 })
 
+app.post('/users/:id', function(req, res){
+    newUser = {id: req.params.id};
+    users.push(newUser)
+    res.send(users)
+    res.status(200)
+})
+
+app.get('/users/:id', function(req, res){
+    newUser = {id: req.params.id};
+    
+    users.push(newUser)
+    res.send(users)
+
+})
+
 app.listen(3000, function(){
     console.log("server is listening");
 })
