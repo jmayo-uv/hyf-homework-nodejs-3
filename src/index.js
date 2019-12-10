@@ -56,13 +56,18 @@ app.post('/user/:id', function(req, res){
 //Create an endpoint to DELETE to /user/:id
 app.delete('/user/:id', function(req, res){
     const user = users.find(user => user.id == req.params.id)
+    res.status(202)
     if(!user){
-        res.status(404)
-           .send('No se encontró el usuario indicado')
+        res.status(204)
+           .json({
+                OK: true
+            })
     } else {
-        const index = users.indexOf(user)
-        users.splice(index,1)
-        res.status(200).send('Usuario borrado')
+        users = []
+        res.status(202)
+           .json({
+                OK: true
+            })
     }
 })
 
