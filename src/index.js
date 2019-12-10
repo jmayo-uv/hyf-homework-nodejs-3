@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json())
 
-var users = [{id: 1, name: 'Hakim' }]
+var users = []
 
 app.get('/', function(req, res){
     res.send("Hello World!");
