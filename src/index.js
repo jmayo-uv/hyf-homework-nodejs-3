@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const users = []
+let users = []
 
 app.get('/', function(req, res){
     res.send("Hello World!");
@@ -15,8 +15,10 @@ app.get('/users', function(req, res){
 })
 
 app.post('/users/:id', function(req, res){
-        res.status(200)
-        res.body.id = {id: 0}
+    newUser = {id: req.params.id};
+    users.push(newUser)
+    res.send(users)
+    res.status(200)
 })
 
 app.get('/users/:id', function(req, res){
