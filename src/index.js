@@ -15,8 +15,8 @@ app.get('/users', function(req, res){
 })
 
 app.post('/users/:id', function(req, res){
-
-        res.send("Hello World!");
+        res.status(200)
+        res.body.id = {id: 0}
 })
 
 app.get('/users/:id', function(req, res){
